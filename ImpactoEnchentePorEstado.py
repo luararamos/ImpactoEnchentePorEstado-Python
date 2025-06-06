@@ -1,152 +1,216 @@
-# Lista com os nomes dos estados disponíveis para análise
-listaCidades = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Porto Alegre", "Recife"]
+# Lista com os nomes dos estados disponíveis para analise
+listaCidades = ["Sao Paulo", "Rio de Janeiro", "Bahia", "Parana", "Pernambuco"]
+chuvaSuportado = [70, 60, 55, 80 , 50]  # Limites por estado
 
-# Lista com os valores máximos de chuva (em mm) que cada estado suporta antes de risco de enchente
-chuvaSuportado = [70, 60, 55, 80 , 50]
 
-# Função que exibe um mapa ASCII do estado de São Paulo
-def mostrar_mapa_sao_paulo():
-    mapa = r""" ... (mapa omitido para facilitar leitura) """
+# Funcoes para exibir os mapas ASCII
+
+def logoFloodGuard():
+    logo = r"""                              
+                                                  
+                                                                                
+          /&@@@@@@@@@@&*                                                        
+   /@@@@@@@@@@&#((#&@@@@@@@@@@.                                                 
+  /@@@                     .@@@%                                                
+  %@@&                      &@@&     @@@@@@& @@                         @@*     
+  %@@@       &@@@@@@@.      @@@&     @@      @@   @@@@%    &@@@&    @@@&@@*     
+  (@@@@@@@@@@@@    /@@@@@@@@@@@#     @@@@@@  @@ &@#   @@ (@&   @@**@@   @@*     
+  .@@@                      @@@      @@      @@ (@@   @@ ,@@   @@ ,@@   @@/     
+   @@@(      @@@@@@@@.     (@@@                    ((*      /(/      (/         
+    @@@@@@@@@@&    /@@@@@@@@@@        &@@@@.                               %@@  
+     @@@                  @@@       @@/    @@/            ,*        *   ,, %@@  
+      @@@@   &@@@@@@&   &@@@       %@@   @@@@@ @@   @@, ##   @@ @@@.  @@,  @@@  
+       *@@@@@@@    &@@@@@@*         @@/    @@/ @@   @@, @@.  @@ @@/   @@   #@@  
+          @@@@@    @@@@@              @@@@@&    @@@@%@, @@@@*@@ &@/    @@@@ @@  
+             &@@@@@@&                                                           
+                                                                                                  
+    """
+    print(logo)
+def mostrarMapaSaoPaulo():
+    mapa = r"""                              
+                                                  
+                @@%                               
+             @@@@@@@@@@@ @@@@@@@*                 
+           /@@@@@@@@@@@@@@@@@@@@@                 
+          @@@@@@@@@@@@@@@@@@@@@@@@                
+         @@@@@@@@@@@@@@@@@@@@@@@@@@&              
+       @@@@@@@@@@@@@@@@@@@@@@@@@@@@               
+              @@@@@@@@@@@@@@@@@@@@@@@   @@@@@@@   
+                     @@@@@@@@@@@@@@@@@@@@@@@      
+                     *@@@@@@@@@@@@@@@@@@@(        
+                      .@@@@@@@@@@@@               
+                       &@@@@@@@@                  
+                            @*                    
+    """
     print(mapa)
 
-# Função que exibe o mapa do estado do Rio de Janeiro
-def mostrar_mapa_rio_de_janeiro():
-    mapa = """ ... """
+def mostrarMapaRioDeJaneiro():
+    mapa = r"""
+                                                  
+                                     @@@@         
+                                   @@@@@@         
+                                  @@@@@@@@@@@@@@  
+                                 @@@@@@@@@@@@@@@  
+                                 @@@@@@@@@@@@@@   
+                             @@@@@@@@@@@@@@@@@@   
+             /@@@@@@@@ .@@@@@@@@@@@@@@@@@@@@@@@   
+     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          
+       ,   @@@@@@@@@@@@@@@@@@@@@@@@@@             
+        %@@@@@@@@@@@@@@@@@@@@@@@@@@*              
+    @@@  /@    @@@@@@@#@@@@@@@@@@@@@              
+    """
     print(mapa)
 
-# Função que exibe o mapa do estado da Bahia
-def mostrar_mapa_bahia():
-    mapa = """ ... """
+def mostrarMapaBahia():
+    mapa = r"""
+                                      
+                      @@@@   @@@@&      
+                @@@@@@@@@@@@@@@@@@@@    
+       @@@  &@@@@@@@@@@@@@@@@@@@@@@@.   
+     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     
+      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   
+       @@@@@@@@@@@@@@@@@@@@@@@@@@@@     
+       @@@@@@@@@@@@@@@@@@@@@@@@/        
+      ,@@@@@@@@@@@@@@@@@@@@@@@@         
+       @@      @  @@@@@@@@@@@@@         
+                      @@@@@@@@@         
+                          #@@@@         
+                          @@@@          
+                         &@@@           
+                          @@*           
+    """
     print(mapa)
 
-# Função que exibe o mapa do estado do Paraná
-def mostrar_mapa_parana():
-    mapa = """ ... """
+def mostrarMapaParana():
+    mapa = r"""
+         @@@@@@@@@@@@@#  @               
+       ,@@@@@@@@@@@@@@@@@@@@@           
+      &@@@@@@@@@@@@@@@@@@@@@@           
+     @@@@@@@@@@@@@@@@@@@@@@@@@*         
+     @@@@@@@@@@@@@@@@@@@@@@@@@          
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(%    
+    @ #@@@@@@@@@@@@@@@@@@@@@@@@@@@      
+       %@@@@@@@@@@@@@@@@@@@@@@@&@       
+                @@@@                     
+    """
     print(mapa)
 
-# Função que exibe o mapa do estado de Pernambuco
-def mostrar_mapa_pernambuco():
-    mapa = """ ... """
+def mostrarMapaPernambuco():
+    mapa = r"""
+                                        
+                                        
+     @@@@@@@@   @    @@@@         @@@@@ 
+     @@@@@@@@@@@@@@@@@@@@%  &@@@@@@@@@@ 
+  ,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  
+    @@@@@@      (.@@@&@@@@@@@@@@        
+    .@@                   @             
+    """
     print(mapa)
 
-# Exibe o menu com as opções de estados para o usuário escolher
-def mostrar_menu():
+# Exibe o menu com as opcoes de estados
+def mostrarMenu():
+    logoFloodGuard()
     print("\n==============================")
-    print(" Selecione um estado para análise de chuvas:")
-    print(" 1 - São Paulo")
+    print(" Selecione um estado para analise de chuvas:")
+    print(" 1 - Sao Paulo")
     print(" 2 - Rio de Janeiro")
     print(" 3 - Bahia")
-    print(" 4 - Paraná")
+    print(" 4 - Parana")
     print(" 5 - Pernambuco")
     print("==============================")
 
-# Define os limites de chuva suportada por estado (repetido aqui por segurança)
-chuvaSuportado = [70, 60, 55, 80, 50]
-
-# Função genérica para validar qualquer número informado pelo usuário
-def validar_numero(texto_input, tipo=float, minimo=0, maximo=None):
+# Validacao generica de numero
+def validarNumero(texto_input, tipo=float, minimo=0, maximo=None):
     validado = False
     while not validado:
         valor_str = input(texto_input)
 
-        # Validação para números inteiros
         if tipo == int:
             if valor_str.isdigit():
                 valor = int(valor_str)
             else:
-                print("⚠️   Entrada inválida! Digite um número inteiro positivo válido.\n")
+                print("Entrada invalida! Digite um numero inteiro positivo valido.\n")
                 continue
 
-        # Validação para números decimais (floats)
         elif tipo == float:
             partes = valor_str.split('.')
             if len(partes) > 2:
-                print("⚠️   Entrada inválida! Digite um número decimal positivo válido.\n")
+                print("Entrada invalida! Digite um numero decimal positivo valido.\n")
                 continue
             if all(p.isdigit() for p in partes):
                 valor = float(valor_str)
             else:
-                print("⚠️   Entrada inválida! Digite um número decimal positivo válido.\n")
+                print("Entrada invalida! Digite um numero decimal positivo valido.\n")
                 continue
         else:
-            print("⚠️   Tipo inválido para validação.")
+            print("Tipo invalido para validacao.")
             return None
 
-        # Verifica se está dentro dos limites mínimo e máximo
         if valor < minimo:
-            print(f"⚠️   Valor inválido! Deve ser maior ou igual a {minimo}.\n")
+            print(f"Valor invalido! Deve ser maior ou igual a {minimo}.\n")
             continue
+
         if maximo is not None and valor > maximo:
-            print(f"⚠️   Valor inválido! Deve ser menor ou igual a {maximo}.\n")
+            print(f"Valor invalido! Deve ser menor ou igual a {maximo}.\n")
             continue
 
-        # Entrada válida, sai do loop
         validado = True
-
     return valor
 
-# Função que verifica se há risco de enchente com base em 3 critérios
-def verificar_enchente(estado_num, chuva, nivel_rio, dias_chuva):
-    # Recupera o valor de chuva suportado conforme o estado escolhido
+# Verificacao de risco de enchente
+def verificarEnchente(estado_num, chuva, nivel_rio, dias_chuva):
     limite_chuva = chuvaSuportado[estado_num - 1]
 
-    # Define os critérios de risco com base nas entradas do usuário
     crit1 = chuva > limite_chuva
     crit2 = nivel_rio > 4
     crit3 = dias_chuva > 2
 
-    # Soma quantos critérios foram atingidos
     total_criticos = sum([crit1, crit2, crit3])
 
-    # Se 2 ou mais critérios forem verdadeiros, exibe alerta. Caso contrário, tudo está sob controle
     if total_criticos >= 2:
-        return "⚠️  Alerta: Há risco de enchente na região!"
+        return "ALERTA: Ha risco de enchente na regiao!"
     else:
-        return "✅ Situação sob controle. Nenhum risco de enchente detectado."
+        return "Situacao sob controle. Nenhum risco de enchente detectado."
 
-# Função principal do programa
+# Funcao principal
 def main():
-    mostrar_menu()  # Mostra o menu de estados
+    mostrarMenu()
 
     estado_valido = False
-    # Solicita que o usuário escolha um estado válido
     while not estado_valido:
-        estado_num = int(input("\nDigite o número do estado: "))
+        estado_num = int(input("\nDigite o numero do estado: "))
         if 1 <= estado_num <= 5:
             estado_valido = True
         else:
-            print("⚠️   Opção inválida. Digite um valor de 1 a 5.\n")
+            print("Opcao invalida. Digite um valor de 1 a 5.\n")
 
-    # Associa o número digitado ao estado e mostra o mapa correspondente
     if estado_num == 1:
-        estado = "São Paulo"
-        mostrar_mapa_sao_paulo()
+        estado = "Sao Paulo"
+        mostrarMapaSaoPaulo()
     elif estado_num == 2:
         estado = "Rio de Janeiro"
-        mostrar_mapa_rio_de_janeiro()
+        mostrarMapaRioDeJaneiro()
     elif estado_num == 3:
         estado = "Bahia"
-        mostrar_mapa_bahia()
+        mostrarMapaBahia()
     elif estado_num == 4:
-        estado = "Paraná"
-        mostrar_mapa_parana()
+        estado = "Parana"
+        mostrarMapaParana()
     elif estado_num == 5:
         estado = "Pernambuco"
-        mostrar_mapa_pernambuco()
+        mostrarMapaPernambuco()
 
-    # Coleta os dados de entrada do usuário
     print("\n---------------------------------------")
     print(f"Estado selecionado: {estado}")
-    chuva = validar_numero(f"Digite a quantidade de chuva registrada em {estado} (em mm): ", float, 0, 500)
-    nivel_rio = validar_numero("Digite o nível do rio (em metros): ", float, 0, 20)
-    dias_chuva = validar_numero("Digite a quantidade de dias de chuva contínua: ", int, 0, 30)
-    print("---------------------------------------\n")
+    chuva = validarNumero(f"Digite a quantidade de chuva registrada em {estado} (em mm): ", float, 0, 500)
+    nivel_rio = validarNumero("Digite o nivel do rio (em metros): ", float, 0, 20)
+    dias_chuva = validarNumero("Digite a quantidade de dias de chuva continua: ", int, 0, 30)
+    print("-------------------------------------yo--\n")
 
-    # Chama a função que verifica se há risco e mostra o resultado final
-    resultado = verificar_enchente(estado_num, chuva, nivel_rio, dias_chuva)
+    resultado = verificarEnchente(estado_num, chuva, nivel_rio, dias_chuva)
 
     print(resultado)
     print("\n=======================================")
 
-# Inicia o programa chamando a função principal
+# Executa o programa
 main()
